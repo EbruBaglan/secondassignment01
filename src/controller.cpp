@@ -1,5 +1,3 @@
-//roscore& && roscd second_assignment && rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
-//catkin make && rospack profile && rosrun second_assignment ebru_reader
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
 #include "geometry_msgs/Twist.h"
