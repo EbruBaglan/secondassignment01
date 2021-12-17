@@ -1,1 +1,0 @@
-rosrun second_assignment ebru_reader
