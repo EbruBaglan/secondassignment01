@@ -1,37 +1,25 @@
 Research Track 1 - Assignment 2 - Solution
 ================================
 
-This is a simple, portable robot simulator developed by [Student Robotics](https://studentrobotics.org).
-Some of the arenas and the exercises have been modified for the Research Track I course
+This is yet another simple and portable robot simulator which has a circuit-like platform. The requirements of the assignment are by using ROS and C++,
+- make robot move autonomously in the circuit as in the first assignment,
+- have a node to control the robot, and an additional node to interact with user to increase/decrease of the robot speed and reset its position.
 
 Installing and running
 ----------------------
 
-The simulator requires a Python 2.7 installation, the [pygame](http://pygame.org/) library, [PyPyBox2D](https://pypi.python.org/pypi/pypybox2d/2.1-r331), and [PyYAML](https://pypi.python.org/pypi/PyYAML/).
+After you download and build the workspace, you can run the simulation environment with:
 
-Once the dependencies are installed, simply run the `test.py` script to test out the simulator.
-
-## Exercise
------------------------------
-
-To run one or more scripts in the simulator, use `run.py`, passing it the file names. 
-
-I am proposing you three exercises, with an increasing level of difficulty.
-The instruction for the three exercises can be found inside the .py files (exercise1.py, exercise2.py, exercise3.py).
-
-When done, you can run the program with:
-
+either
 ```bash
-$ python run.py exercise1.py
+$ ./jarvis.sh
+```
+or
+```bash
+$ rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
 ```
 
-You have also the solutions of the exercises (folder solutions)
-
-```bash
-$ python run.py solutions/exercise1_solution.py
-```
-
-Robot API
+Structure
 ---------
 
 The API for controlling a simulated robot is designed to be as similar as possible to the [SR API][sr-api].
