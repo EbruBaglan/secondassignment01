@@ -28,4 +28,5 @@ There are 3 different nodes to assure communication.
 
 Flowchart
 ---------
+![alt text](https://i.ibb.co/TwpwYrT/flowchart.png)
 
