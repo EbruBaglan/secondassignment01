@@ -1,4 +1,4 @@
-Python Robotics Simulator
+Research Track 1 - Assignment 2 - Solution
 ================================
 
 This is a simple, portable robot simulator developed by [Student Robotics](https://studentrobotics.org).
