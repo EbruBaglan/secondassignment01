@@ -19,12 +19,12 @@ Structure
 ---------
 
 There are 3 different nodes to assure communication.
-´userinterface´ node asks user for input,
-´controller´ node provides both autonomous wander, and user-input task,
-´service´ node checks request and provides corresponding response.
+`userinterface` node asks user for input,
+`controller` node provides both autonomous wander, and user-input task,
+`service` node checks request and provides corresponding response.
 
-´service´ service has the structure of ´char´ request and ´float32´ response. Response is an increase/decrease value to the velocity.
-´vel´ message is used for sending the service's response to the ´controller´.
+`service` service has the structure of `char` request and `float32` response. Response is an increase/decrease value to the velocity.
+`vel` message is used for sending the service's response to the `controller`.
 
 Flowchart
 ---------
