@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 
     while (ros::ok())
     {
-        printf("\rEnter a for decrease speed, d for speed increase and r for reset position:\n");
+        printf("Enter a for decrease speed, d for speed increase and r for reset position:");
         while ((c = getchar()) != '\n' && c != EOF)
         {
             getchar(); // this extra getchar is to get rid of '\n' at the end. User hits 'enter' after the input command and creates is non-deliberately.
@@ -41,7 +41,8 @@ int main(int argc, char **argv)
             case 'A':
             case 'D':
                 /* increase or decrease command */
-                printf("\rEnter a for decrease speed, d for speed increase and r for reset position:\n");
+                system("clear");
+                printf("Enter a for decrease speed, d for speed increase and r for reset position:\n");
                 user_ser.request.userinp = c; // request is set
                 client_userinp.waitForExistence();
                 client_userinp.call(user_ser);          // request is sent
@@ -50,14 +51,16 @@ int main(int argc, char **argv)
                 break;
             case 'r':
                 /* reset command */
-                printf("\rEnter a for decrease speed, d for speed increase and r for reset position:\n");
+                system("clear");
+                printf("Enter a for decrease speed, d for speed increase and r for reset position:\n");
                 client_reset.waitForExistence();
                 client_reset.call(res_ser);
                 break;
 
             default:
                 /* other inputs are ignored */
-                printf("\rPlease enter a for decrease speed, d for speed increase and r for reset position:\n");
+                system("clear");
+                printf("Please enter a for decrease speed, d for speed increase and r for reset position:\n");
                 break;
             }
         }

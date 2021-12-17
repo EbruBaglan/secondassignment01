@@ -4,7 +4,7 @@
 ros::Publisher pub;
 ros::ServiceServer vel_service;
 
-float vel_min = 0.0; // without declaring min, robot can turn back after some decrements :D
+float vel_min = -3.5; // without declaring min, robot can turn back after some decrements :D
 
 float vel_now = 1.0; // initial velocity change value
 float inc_dec = 0.1; // increment-decrement value

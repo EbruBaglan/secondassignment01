@@ -44,35 +44,33 @@ void baseCallback(const sensor_msgs::LaserScan::ConstPtr &msg) // constant point
         dist[i] = msg->ranges[i];
 
     // Subsectioning hint is used, here are the subsections' mins.
-    min1 = subsections(0, 90, dist);     // left_bottom  91
     min2 = subsections(91, 270, dist);      // left_mid 180
     min3 = subsections(271, 450, dist);        // front 180
     min4 = subsections(451, 630, dist);    // right_mid 180
-    min5 = subsections(631, 720, dist); // right_bottom  90
 
     // if front is close, stop first
-    if (min3 < 1.0956)
-    {                          // 1.1003 returned at second...
-        my_vel.linear.x = 0.0;
-        my_vel.linear.y = 0.0;
+    if (min3 < 0.5)
+    {                          // 1.1003 returned at second... ///1.0956 worked usuallybut...
+        my_vel.linear.x = 0.5;
+        my_vel.linear.y = 0.5;
 
         // then check right mid and left mid. make a turn to the other side
         if (min4 < min2)
         {
-            my_vel.angular.z = -100.0;
+            my_vel.angular.z = -120.0;
             pub.publish(my_vel);
         }
 
         else
         {
-            my_vel.angular.z = 100.0;
+            my_vel.angular.z = 120.0;
             pub.publish(my_vel);
         }
         // angular 500 is full rotation. 180 degree. 250 = 90 degree
     }
     else
     {
-        my_vel.linear.x = 1.5 + uservel;    // user's wish have been realized. user feels acknowledged. user is happy.
+        my_vel.linear.x = 3.5 + uservel;    // user's wish have been realized. user feels acknowledged. user is happy.
         my_vel.linear.y = 0.0;              // https://www.youtube.com/watch?v=dU6EMlfjPFA 
         my_vel.angular.z = 0.0;
         pub.publish(my_vel);
