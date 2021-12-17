@@ -34,7 +34,7 @@ How it works?
 ---------
 Automous moving part is straighforward. As long as there is no obstacle in front, robot keeps moving. When the front distance lowers to a certain distance, robot checks right and left surroundings. Whichever side is the farthest, robots turns toward that direction.
 
-When user inputs a value, userinterface call service with the request char. Service node, checks the request in the service structure, and puts an increment/decrement response into service structure. Userinterface receives this increment/decrement, and publishes this to controller node. Controller node, takes this and adds it into linear x velocity, and publishes into cmd_vel.
+When user inputs a value, userinterface calls the service(not the node) with the request char. Service node, checks the request in the service structure, and puts an increment/decrement response into service structure. Userinterface receives this increment/decrement, and publishes this to controller node. Controller node, takes this and adds it into linear x velocity, and publishes into cmd_vel.
 
 Flowchart
 ---------
