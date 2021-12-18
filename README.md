@@ -21,11 +21,14 @@ The simulation environment and all the nodes within are initiated just by that.
 
 You will be at the user interface asking for increase/decrease/reset command.
 
-Here is the video for run and proof tha code works:
+Here is the video for run and proof that code works:
 https://youtu.be/xC3xZsW8AZs
 
 Structure
 ---------
+![alt text](https://i.ibb.co/cbtbdBN/structure.png)
+
+
 
 There are 2 nodes to assure communication.
 `userinterface` node asks user for input,
