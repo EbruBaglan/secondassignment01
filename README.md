@@ -15,6 +15,9 @@ $ ./runew.sh
 ```
 You will be at the user interface asking for increase/decrease/reset command.
 
+Here is the video:
+https://user-images.githubusercontent.com/71343894/146621569-72213bf0-1395-4442-9b6f-616392039cea.mp4
+
 Structure
 ---------
 ![alt text](https://i.ibb.co/SBRptpq/nodes.png)
