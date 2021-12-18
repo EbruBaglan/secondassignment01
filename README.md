@@ -8,14 +8,20 @@ This is yet another simple and portable robot simulator which runs in a circuit.
 Installing and running
 ----------------------
 
-After you download and build the workspace, you can run the simulation environment and all the nodes with
+After you download and build the workspace, first initialize roscore by hitting,
+```bash
+$ roscore &
+```
+then go to the main directory on package and just hit
 
 ```bash
 $ ./runew.sh
 ```
+The simulation environment and all the nodes within are initiated just by that.
+
 You will be at the user interface asking for increase/decrease/reset command.
 
-Here is the video for run and proof it works:
+Here is the video for run and proof tha code works:
 https://youtu.be/xC3xZsW8AZs
 
 Structure
