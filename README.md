@@ -8,36 +8,40 @@ This is yet another simple and portable robot simulator which runs in a circuit.
 Installing and running
 ----------------------
 
-After you download and build the workspace, you can run the simulation environment and all the nodes with
+After you download and build the workspace, first initialize roscore by hitting,
+```bash
+$ roscore &
+```
+then go to the main directory on package and just hit
 
 ```bash
 $ ./runew.sh
 ```
+The simulation environment and all the nodes within are initiated just by that.
+
 You will be at the user interface asking for increase/decrease/reset command.
 
-Here is the video:
-https://youtu.be/zz_ODIWEHXU 
+Here is the video for run and proof that code works:
+https://youtu.be/xC3xZsW8AZs
 
 Structure
 ---------
-![alt text](https://i.ibb.co/SBRptpq/nodes.png)
+![alt text](https://i.ibb.co/cbtbdBN/structure.png)
 
-There are 3 different nodes to assure communication.
+
+
+There are 2 nodes to assure communication.
 `userinterface` node asks user for input,
-`controller` node provides both autonomous wander, and user-input task,
-`service` node checks request and provides corresponding response in the `service` service. (should have chosen some creative names)
+`controller` node provides both autonomous movement, and user-input movement.
 
 There is one service.
-`service` service has the structure of `char` request and `float32` response. Response is an increase/decrease value to the velocity, which is later sent to the `controller` through `/vel` topic from `userinterface` to `controller`.
-
-There is one msg, sent through `/vel` topic.
-`vel` mesg is used for sending the service's response to the `controller`.
+`service` service has the structure of `char` request and `float32` response. Response is the increase/decrease value to the velocity.
 
 How it works?
 ---------
 Automous moving part is straighforward. As long as there is no obstacle in front, robot keeps moving. When the front distance lowers to a certain distance, robot checks right and left surroundings. Whichever side is the farthest, robots turns toward that direction.
 
-When user inputs a value, userinterface calls the service(not the node) with the request char. Service node, checks the request in the service structure, and puts an increment/decrement response into service structure. Userinterface receives this increment/decrement, and publishes this to controller node. Controller node, takes this and adds it into linear x velocity, and publishes into cmd_vel.
+When user inputs a value, userinterface calls the service with the request char. Controller node, checks the request in the service structure, and puts an increment/decrement response into service, and it itself uses it in linear.x velocity assignment, and publishes it into cmd_vel.
 
 Flowchart
 ---------
