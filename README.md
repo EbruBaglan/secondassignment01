@@ -20,7 +20,6 @@ https://youtu.be/xC3xZsW8AZs
 
 Structure
 ---------
-![alt text](https://i.ibb.co/SBRptpq/nodes.png)
 
 There are 2 nodes to assure communication.
 `userinterface` node asks user for input,
