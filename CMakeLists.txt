@@ -52,11 +52,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  vel.msg
+#add_message_files(
+#  FILES
+#  vel.msg
 #   Message2.msg
-)
+#)
 
 ## Generate services in the 'srv' folder
  add_service_files(
@@ -140,7 +140,6 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(controller src/00_controller.cpp)
 add_executable(userinterface src/00_userinterface.cpp)
-add_executable(service src/00_service.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -152,7 +151,6 @@ add_executable(service src/00_service.cpp)
 ## same as for the library above
 add_dependencies(controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(userinterface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(service ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(controller
@@ -160,10 +158,6 @@ target_link_libraries(controller
  )
 
 target_link_libraries(userinterface
-   ${catkin_LIBRARIES}
- )
-
- target_link_libraries(service
    ${catkin_LIBRARIES}
  )
 
