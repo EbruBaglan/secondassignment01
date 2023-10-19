@@ -7,6 +7,10 @@ This is yet another simple and portable robot simulator which runs in a circuit.
 
 Installing and running
 ----------------------
+Choose a directory to work in, then clone the repo by typing
+```bash
+git clone https://github.com/EbruBaglan/secondassignment01
+```
 
 After you download and build the workspace, first initialize roscore by hitting,
 ```bash
